@@ -1,0 +1,6 @@
+sentence-transformers==5.4.0
+fastapi
+uvicorn
+requests
+python-dotenv
+pydantic-settings
