@@ -37,19 +37,32 @@ The service will be available at `http://localhost:8000` and via your public ngr
 
 ## API Usage Examples
 
+> [!NOTE]
+> Replace `<YOUR_API_URL>` with your actual endpoint:
+> - Local: `http://localhost:8000`
+> - Ngrok: Your static domain (e.g., `https://your-domain.ngrok-free.app`)
+
 ### Using cURL
 ```bash
+# Example with Ngrok URL:
+curl -X POST "https://vibrant-ant-specially.ngrok-free.app/embeddings" \
+     -H "Content-Type: application/json" \
+     -H "X-API-KEY: epidebate" \
+     -d '{"input": ["Hello world", "This is an example sentence"]}'
+
+# Example with Local URL:
 curl -X POST "http://localhost:8000/embeddings" \
      -H "Content-Type: application/json" \
-     -H "X-API-KEY: your-api-key" \
-     -d '{"input": ["Hello world", "This is an example sentence"]}'
+     -H "X-API-KEY: epidebate" \
+     -d '{"input": ["Hello world"]}'
 ```
 
 ### Using Python (requests)
 ```python
 import requests
 
-url = "http://localhost:8000/embeddings"
+# Set your URL here (Local or Ngrok)
+url = "<YOUR_API_URL>/embeddings"
 headers = {
     "X-API-KEY": "your-api-key",
     "Content-Type": "application/json"
@@ -64,7 +77,7 @@ print(response.json())
 
 ### Checking Service Health
 ```bash
-curl -H "X-API-KEY: your-api-key" http://localhost:8000/health
+curl -H "X-API-KEY: your-api-key" "<YOUR_API_URL>/health"
 ```
 
 ## Project Structure
