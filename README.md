@@ -47,8 +47,14 @@ curl -X POST "http://localhost:8000/embeddings" \
 ```
 
 ### 2. Generate Embeddings (Specific Model)
-To use a specific model, provide the `model` alias defined in your `.env`.
+To use a specific model, provide the `model` alias defined in your `.env`. 
+
+**Current Available Aliases:**
+- `all-mpnet`: `sentence-transformers/all-mpnet-base-v2`
+- `harrier`: `microsoft/harrier-oss-v1-0.6b`
+
 ```bash
+# Example selecting the Harrier model:
 curl -X POST "http://localhost:8000/embeddings" \
      -H "Content-Type: application/json" \
      -H "X-API-KEY: epidebate" \
